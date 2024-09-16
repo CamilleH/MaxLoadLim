@@ -30,9 +30,9 @@ function results = maxloadlim(mpc,dir_mll,varargin)
 %   Copyright (c) 2015-2016, Power Systems Engineering Research Center (PSERC)
 %   by Camille Hamon
 %
-%   This file is part of MATPOWER.
+%   This file is part of MATPOWER/mx-maxloadlim.
 %   Covered by the 3-clause BSD License (see LICENSE file for details).
-%   See http://www.pserc.cornell.edu/matpower/ for more info.
+%   See https://github.com/MATPOWER/mx-maxloadlim/ for more info.
 
 define_constants;
 
@@ -86,7 +86,7 @@ while iter <= iter_max && repeat
     
     %% Run opf
     % Turning off the printing and initializing from the base case
-    mpopt = mpoption('verbose',options.verbose,'opf.init_from_mpc',1);
+    mpopt = mpoption('verbose',options.verbose,'opf.start',2);
     mpopt = mpoption(mpopt,'out.all',0);
     % Decreasing the threshold for the relative complementarity constraints
     mpopt = mpoption(mpopt,'mips.comptol',1e-8);
